@@ -1,89 +1,121 @@
 function getComputerChoice()
 {
-    const compInput = new Array("Rock","Paper","Scissor");
+    const compInput = new Array("ROCK","PAPER","SCISSOR");
     const random = Math.floor(Math.random() * compInput.length);
     return compInput[random];
 }
 
-document.getElementById("button").onclick =function()
-{   
-    getPlayerChoice(); 
-}
-
 function getPlayerChoice()
 {
-  const choice =  document.getElementById("input").value
-
-    switch(choice.toUpperCase())
+  let userChoice= prompt("Rock,Paper or Scissor?");
+    switch(userChoice.toUpperCase())
     {
         case "ROCK":
-            console.log("ROCK")
-            break;
+            return choice = "ROCK"
         case "PAPER":
-            console.log("PAPER")
+            return choice = "PAPER"
             break;
         case "SCISSOR":
-            console.log("SCISSOR")
+            return choice = "SCISSOR"
             break;
-        default:
-            console.log("Please enter only Rock,Paper or Scissor!")
-            break;
-
-    }
-
+    }  
 }
-/*
-document.getElementById("rock").onclick =function()
-{
-getPlayerChoice("Rock")
-} 
-document.getElementById("paper").onclick= function()
-{
-getPlayerChoice("Paper")
-} 
-document.getElementById("scissor").onclick= function()
-{
-getPlayerChoice("Scissor")
-} 
 
 function playRound(playerSelecetion,computerSelection)
 {
-    if(playerSelecetion ==="Rock" && computerSelection==="Scissor")
+    const outcome=["default","default"]
+
+    if(playerSelecetion ==="ROCK" && computerSelection==="SCISSOR")
     {
-        console.log("Computer chooses Scissor, you win!")
+        outcome[0]="Computer chooses SCISSOR, you win!", outcome[1]="win"
+        return outcome
     }
-    else if(playerSelecetion==="Rock" && computerSelection==="Rock")
+    else if(playerSelecetion==="ROCK" && computerSelection==="ROCK")
     {
-        console.log("Computer chooses Rock, it's a draw!")
+         outcome[0]="Computer chooses ROCK, it's a draw!", outcome[1]="draw"
+        return outcome
     }
-    else if(playerSelecetion==="Rock" && computerSelection==="Paper")
+    else if(playerSelecetion==="ROCK" && computerSelection==="PAPER")
     {
-        console.log("Computer chooses Paper, you lose!")
+        outcome[0]="Computer chooses PAPER, you lose!", outcome[1]="lose"
+        return outcome
     }
-    else if(playerSelecetion ==="Paper" && computerSelection==="Rock")
+    else if(playerSelecetion ==="PAPER" && computerSelection==="ROCK")
     {
-        console.log("Computer chooses Rock, you win!")
+         outcome[0]="Computer chooses ROCK, you win!", outcome[1]="win"
+        return outcome
     }
-    else if(playerSelecetion==="Paper" && computerSelection==="Paper")
+    else if(playerSelecetion==="PAPER" && computerSelection==="PAPER")
     {
-        console.log("Computer chooses Paper, it's a draw!")
+         outcome[0]="Computer chooses PAPER, it's a draw!",outcome[1]="draw"
+        return outcome
     }
-    else if(playerSelecetion==="Paper" && computerSelection==="Scissor")
+    else if(playerSelecetion==="PAPER" && computerSelection==="SCISSOR")
     {
-        console.log("Computer chooses Scissor, you lose!")
+        outcome[0]="Computer chooses SCISSOR, you lose!",outcome[1]="lose"
+        return outcome
     }
-    else if(playerSelecetion ==="Scissor" && computerSelection==="Paper")
-    {
-        console.log("Computer chooses Paper, you win!")
+    else if(playerSelecetion ==="SCISSOR" && computerSelection==="PAPER")
+    {   outcome[0]="Computer chooses PAPER, you win!",outcome[1]="win"
+        return outcome
     }
-    else if(playerSelecetion==="Scissor" && computerSelection==="Scissor")
+    else if(playerSelecetion==="SCISSOR" && computerSelection==="SCISSOR")
     {
-        console.log("Computer chooses Scissor, it's a draw!")
+        outcome[0]="Computer chooses SCISSOR, it's a draw!",outcome[1]="draw"
+        return outcome
     }
-    else if(playerSelecetion==="Scissor" && computerSelection==="Rock")
+    else if(playerSelecetion==="SCISSOR" && computerSelection==="ROCK")
     {
-        console.log("Computer chooses Scissor, you lose!")
+        outcome[0]="Computer chooses SCISSOR, you lose!",outcome[1]="lose"
+        return outcome
     }
 
 }
-*/
+
+function game()
+{
+    let winCounter =0;
+    let drawCounter =0;
+    let loseCounter =0;
+
+        for(let i=0;i<5;i++)
+        {
+            const result = playRound(getPlayerChoice(),getComputerChoice())
+            {
+                alert(result[0])
+                if (result[1]==="win")
+                {
+                    winCounter++
+                    console.log(winCounter);
+                }
+                else if(result[1]==="draw")
+                {
+                    drawCounter++
+                    console.log(drawCounter);
+                }
+                else
+                {
+                    loseCounter++;
+                    console.log(loseCounter);
+                }
+            }
+        }
+
+        if(winCounter>loseCounter && winCounter> drawCounter)
+            {
+            alert("You have won " + winCounter +" of 5 rounds, you Won!")
+            }
+        else if(drawCounter>winCounter>loseCounter)
+            {
+            alert("You tied " + drawCounter +" of 5 rounds, it's a draw!")
+            }
+        else
+            {
+        alert("You have lost " + loseCounter +" of 5 rounds, you lose!")
+            }
+}
+
+game();
+    
+
+
