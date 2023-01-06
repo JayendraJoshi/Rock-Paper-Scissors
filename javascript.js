@@ -7,23 +7,37 @@ function getComputerChoice()
 
 function getPlayerChoice()
 {
-  let userChoice= prompt("Rock,Paper or Scissor?");
-    switch(userChoice.toUpperCase())
+let userChoice;
+let repeatRound =false;
+do
+{
+    userChoice= prompt("Rock,Paper or Scissor?");
+    userChoice= userChoice.toUpperCase();
+    switch(userChoice)
     {
         case "ROCK":
-            return choice = "ROCK"
+            repeatRound=false;
+            return userChoice 
+            break;
         case "PAPER":
-            return choice = "PAPER"
+            repeatRound=false;
+            return userChoice
             break;
         case "SCISSOR":
-            return choice = "SCISSOR"
+            repeatRound=false;
+            return userChoice
             break;
+        default:
+        repeatRound =true;
+        alert("Please enter only Rock,Paper or Scissor!")
     }  
+}
+while(repeatRound===true)
 }
 
 function playRound(playerSelecetion,computerSelection)
 {
-    const outcome=["default","default"]
+    const outcome=["default","default"];
 
     if(playerSelecetion ==="ROCK" && computerSelection==="SCISSOR")
     {
@@ -82,7 +96,8 @@ function game()
         {
             const result = playRound(getPlayerChoice(),getComputerChoice())
             {
-                alert(result[0])
+                alert(result[0]);
+
                 if (result[1]==="win")
                 {
                     winCounter++
@@ -101,21 +116,32 @@ function game()
             }
         }
 
+        alert("You won " + winCounter +", tied " + drawCounter + " and lost " + loseCounter +" of 5 rounds")
+
         if(winCounter>loseCounter && winCounter> drawCounter)
             {
-            alert("You have won " + winCounter +" of 5 rounds, you Won!")
+            alert("You won!")
             }
-        else if(drawCounter>winCounter>loseCounter)
+        else if(drawCounter>winCounter && drawCounter>loseCounter)
             {
-            alert("You tied " + drawCounter +" of 5 rounds, it's a draw!")
+            alert("It's a draw!")
             }
+        else if(winCounter===drawCounter && winCounter>loseCounter && drawCounter>loseCounter || loseCounter===winCounter && loseCounter>drawCounter && winCounter>drawCounter||drawCounter===loseCounter && drawCounter>winCounter && loseCounter> winCounter)
+        {
+            alert("It's a draw!")
+        }
         else
             {
-        alert("You have lost " + loseCounter +" of 5 rounds, you lose!")
+            alert("You lost!")
             }
+        winCounter=0;
+        loseCounter=0;
+        drawCounter=0;
 }
 
+document.getElementById("button").onclick =function()
+{
 game();
-    
+}
 
 
