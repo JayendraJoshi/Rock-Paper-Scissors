@@ -1,3 +1,8 @@
+const resultDiv=document.querySelector(".Result");
+
+    let won=0;
+    let tied=0;
+    let lost=0;
 function getComputerChoice()
 {
     const compInput = new Array("ROCK","PAPER","SCISSOR");
@@ -5,143 +10,91 @@ function getComputerChoice()
     return compInput[random];
 }
 
-function getPlayerChoice()
-{
-let userChoice;
-let repeatRound =false;
-do
-{
-    userChoice= prompt("Rock,Paper or Scissor?");
-    userChoice= userChoice.toUpperCase();
-    switch(userChoice)
-    {
-        case "ROCK":
-            repeatRound=false;
-            return userChoice 
-            break;
-        case "PAPER":
-            repeatRound=false;
-            return userChoice
-            break;
-        case "SCISSOR":
-            repeatRound=false;
-            return userChoice
-            break;
-        default:
-        repeatRound =true;
-        alert("Please enter only Rock,Paper or Scissor!")
-    }  
-}
-while(repeatRound===true)
-}
-
 function playRound(playerSelecetion,computerSelection)
 {
     const outcome=["default","default"];
 
+
     if(playerSelecetion ==="ROCK" && computerSelection==="SCISSOR")
     {
         outcome[0]="Computer chooses SCISSOR, you win!", outcome[1]="win"
-        return outcome
+       
     }
     else if(playerSelecetion==="ROCK" && computerSelection==="ROCK")
     {
          outcome[0]="Computer chooses ROCK, it's a draw!", outcome[1]="draw"
-        return outcome
+       
     }
     else if(playerSelecetion==="ROCK" && computerSelection==="PAPER")
     {
         outcome[0]="Computer chooses PAPER, you lose!", outcome[1]="lose"
-        return outcome
+       
     }
     else if(playerSelecetion ==="PAPER" && computerSelection==="ROCK")
     {
          outcome[0]="Computer chooses ROCK, you win!", outcome[1]="win"
-        return outcome
+       
     }
     else if(playerSelecetion==="PAPER" && computerSelection==="PAPER")
     {
          outcome[0]="Computer chooses PAPER, it's a draw!",outcome[1]="draw"
-        return outcome
+       
     }
     else if(playerSelecetion==="PAPER" && computerSelection==="SCISSOR")
     {
         outcome[0]="Computer chooses SCISSOR, you lose!",outcome[1]="lose"
-        return outcome
+       
     }
     else if(playerSelecetion ==="SCISSOR" && computerSelection==="PAPER")
     {   outcome[0]="Computer chooses PAPER, you win!",outcome[1]="win"
-        return outcome
+       
     }
     else if(playerSelecetion==="SCISSOR" && computerSelection==="SCISSOR")
     {
         outcome[0]="Computer chooses SCISSOR, it's a draw!",outcome[1]="draw"
-        return outcome
+       
     }
     else if(playerSelecetion==="SCISSOR" && computerSelection==="ROCK")
     {
         outcome[0]="Computer chooses SCISSOR, you lose!",outcome[1]="lose"
-        return outcome
+       
     }
 
+    return outcome;
 }
 
-function game()
+function game(playerSelecetion)
 {
-    let winCounter =0;
-    let drawCounter =0;
-    let loseCounter =0;
+result=playRound(playerSelecetion,getComputerChoice())
 
-        for(let i=0;i<5;i++)
-        {
-            const result = playRound(getPlayerChoice(),getComputerChoice())
-            {
-                alert(result[0]);
+    if(result[1]=="win")won+=1
+    else if(result[1]=="draw")draw+=1
+    else lost+=1
 
-                if (result[1]==="win")
-                {
-                    winCounter++
-                    console.log(winCounter);
-                }
-                else if(result[1]==="draw")
-                {
-                    drawCounter++
-                    console.log(drawCounter);
-                }
-                else
-                {
-                    loseCounter++;
-                    console.log(loseCounter);
-                }
-            }
-        }
 
-        alert("You won " + winCounter +", tied " + drawCounter + " and lost " + loseCounter +" of 5 rounds")
+    
+    if(won ==5 || tied==5 || lost ==5) alert(result[0]); won=0;tied=0;lost=0;
 
-        if(winCounter>loseCounter && winCounter> drawCounter)
-            {
-            alert("You won!")
-            }
-        else if(drawCounter>winCounter && drawCounter>loseCounter)
-            {
-            alert("It's a draw!")
-            }
-        else if(winCounter===drawCounter && winCounter>loseCounter && drawCounter>loseCounter || loseCounter===winCounter && loseCounter>drawCounter && winCounter>drawCounter||drawCounter===loseCounter && drawCounter>winCounter && loseCounter> winCounter)
-        {
-            alert("It's a draw!")
-        }
-        else
-            {
-            alert("You lost!")
-            }
-        winCounter=0;
-        loseCounter=0;
-        drawCounter=0;
 }
 
-document.getElementById("button").onclick =function()
-{
-game();
-}
+const rockButton=document.querySelector(".Rock");
+rockButton.addEventListener("click",function(){
+
+        game("ROCK");
+
+})
+
+const paperButton=document.querySelector(".Paper");
+paperButton.addEventListener("click",function(){
+
+        game("PAPER")
+})
+
+const scissorButton=document.querySelector(".Scissor");
+scissorButton.addEventListener("click",function(){
+
+        game("SCISSOR")
+})
+
 
 
