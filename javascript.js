@@ -1,8 +1,20 @@
 const resultDiv=document.querySelector(".Result");
+const playerScore=document.querySelector(".Playerscore")
+const computerScore=document.querySelector(".Computerscore")
 
-    let won=0;
-    let tied=0;
-    let lost=0;
+    //Computer Score
+    let cWon=0;
+    let cTied=0;
+    let cLost=0;
+
+     // Player Score
+    let pWon=0;
+    let pTied=0;
+    let pLost=0;
+
+playerScore.textContent=("You: Won: " + pWon );
+computerScore.textContent=("The Computer: Won: " + cWon );
+
 function getComputerChoice()
 {
     const compInput = new Array("ROCK","PAPER","SCISSOR");
@@ -10,9 +22,11 @@ function getComputerChoice()
     return compInput[random];
 }
 
-function playRound(playerSelecetion,computerSelection)
+function playRound(playerSelecetion1,computerSelection)
 {
     const outcome=["default","default"];
+
+        playerSelecetion = playerSelecetion1.toUpperCase();
 
 
     if(playerSelecetion ==="ROCK" && computerSelection==="SCISSOR")
@@ -63,38 +77,37 @@ function playRound(playerSelecetion,computerSelection)
     return outcome;
 }
 
-function game(playerSelecetion)
-{
-result=playRound(playerSelecetion,getComputerChoice())
+const buttons=document.querySelectorAll("button");
 
-    if(result[1]=="win")won+=1
-    else if(result[1]=="draw")draw+=1
-    else lost+=1
+buttons.forEach(occurance =>{
+occurance.addEventListener("click",function(e){
 
+ result=playRound(occurance.className,getComputerChoice())
 
+    if(result[1]=="win")pWon++, cLost++;
+    else if(result[1]=="draw") pTied++,cTied++;
+    else if(result[1]=="lose") pLost++,cWon++;
     
-    if(won ==5 || tied==5 || lost ==5) alert(result[0]); won=0;tied=0;lost=0;
+playerScore.textContent=("You: Won: " + pWon );
+computerScore.textContent=("The Computer: Won: " + cWon );
 
+    alert(result[0]);
+
+    if(pWon==5) alert("You won!"),reset();
+    else if(cWon==5) alert("You lost!"),reset();
+})
+})
+
+function reset(){
+    cWon=0;
+    cTied=0;
+    cLost=0;
+
+     // Player Score
+    pWon=0;
+    pTied=0;
+    pLost=0;
+
+    playerScore.textContent=("You: Won: " + pWon );
+computerScore.textContent=("The Computer: Won: " + cWon );
 }
-
-const rockButton=document.querySelector(".Rock");
-rockButton.addEventListener("click",function(){
-
-        game("ROCK");
-
-})
-
-const paperButton=document.querySelector(".Paper");
-paperButton.addEventListener("click",function(){
-
-        game("PAPER")
-})
-
-const scissorButton=document.querySelector(".Scissor");
-scissorButton.addEventListener("click",function(){
-
-        game("SCISSOR")
-})
-
-
-
