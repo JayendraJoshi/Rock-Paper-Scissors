@@ -1,7 +1,7 @@
 //nodes
 const resultDiv=document.querySelector(".result");
-const playerScore=document.querySelector(".P-score")
-const computerScore=document.querySelector(".C-score")
+const playerScore=document.querySelector(".player-Score")
+const computerScore=document.querySelector(".computer-Score")
 const optionButtons=document.querySelectorAll(".option");
 const restartBtn=document.querySelector(".restart");
 
@@ -14,8 +14,8 @@ let cLost=0;
 let pWon=0;
 let pTied=0;
 let pLost=0;
-
 let round=0;
+
 //default textContent
 playerScore.textContent=("You won: ");
 computerScore.textContent=("The Computer won:");
@@ -46,7 +46,7 @@ function playRound(playerSelecetion1,computerSelection)
     }
     else if(playerSelecetion==="ROCK" && computerSelection==="PAPER")
     {
-        outcome[0]="Computer chooses PAPER, you lose!", outcome[1]="lose"
+        outcome[0]="Computer chooses PAPER, you lose!", outcome[1]="loss"
        
     }
     else if(playerSelecetion ==="PAPER" && computerSelection==="ROCK")
@@ -61,7 +61,7 @@ function playRound(playerSelecetion1,computerSelection)
     }
     else if(playerSelecetion==="PAPER" && computerSelection==="SCISSOR")
     {
-        outcome[0]="Computer chooses SCISSOR, you lose!",outcome[1]="lose"
+        outcome[0]="Computer chooses SCISSOR, you lose!",outcome[1]="loss"
        
     }
     else if(playerSelecetion ==="SCISSOR" && computerSelection==="PAPER")
@@ -75,7 +75,7 @@ function playRound(playerSelecetion1,computerSelection)
     }
     else if(playerSelecetion==="SCISSOR" && computerSelection==="ROCK")
     {
-        outcome[0]="Computer chooses SCISSOR, you lose!",outcome[1]="lose"
+        outcome[0]="Computer chooses SCISSOR, you lose!",outcome[1]="loss"
        
     }
 
@@ -113,7 +113,7 @@ function addScore(result)
 {
     if(result[1]=="win")pWon++, cLost++;
     else if(result[1]=="draw") pTied++,cTied++;
-    else if(result[1]=="lose") pLost++,cWon++;
+    else if(result[1]=="loss") pLost++,cWon++;
     resultDiv.textContent=(result[0])
     return [pWon,cWon]
 }
@@ -132,7 +132,7 @@ function reset(){
     pTied=0;
     pLost=0;
 
-    playerScore.textContent=("You: Won: ");
+    playerScore.textContent=("You Won: ");
     computerScore.textContent=("The Computer: Won: ");
     resultDiv.textContent=("")
     return;
