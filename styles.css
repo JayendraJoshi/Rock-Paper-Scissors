@@ -1,0 +1,42 @@
+body{
+min-height: 100vh;
+background-color: black;
+color:white;
+display: flex;
+flex-direction: column;
+border:3px solid wheat;
+flex-grow: 1;
+}
+
+.button-Container,.heading-Container,.score-Container,.result{
+    display:flex;
+    flex-grow: 1;
+}
+
+.heading-Container{
+    flex-direction: column;
+    align-items: center;
+}
+
+.button-Container,.score-Container{
+    justify-content: space-around;
+    align-items: center;
+}
+h1{
+font-size: 60px;
+}
+
+button{
+    width: 100px;
+    height:100px
+}
+.result{
+    justify-content: center;
+    font-size: 30px;
+}
+.score-Container{
+    font-size: 40px;
+}
+.restart{
+    align-self: center;
+}
