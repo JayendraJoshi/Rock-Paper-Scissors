@@ -25,7 +25,7 @@ computerScore.textContent=("Computer score:");
 
 function getComputerChoice()
 {
-    const compInput = new Array("ROCK","PAPER","SCISSOR");
+    const compInput = new Array("ROCK","PAPER","SCISSORS");
     const random = Math.floor(Math.random() * compInput.length);
     return compInput[random];
 }
@@ -37,9 +37,9 @@ function playRound(playerSelecetion1,computerSelection)
         playerSelecetion = playerSelecetion1.toUpperCase();
 
 
-    if(playerSelecetion ==="ROCK" && computerSelection==="SCISSOR")
+    if(playerSelecetion ==="ROCK" && computerSelection==="SCISSORS")
     {
-        outcome[0]="Computer chooses SCISSOR, you win!", outcome[1]="win"
+        outcome[0]="Computer chooses SCISSORS, you win!", outcome[1]="win"
        
     }
     else if(playerSelecetion==="ROCK" && computerSelection==="ROCK")
@@ -62,23 +62,23 @@ function playRound(playerSelecetion1,computerSelection)
          outcome[0]="Computer chooses PAPER, it's a draw!",outcome[1]="draw"
        
     }
-    else if(playerSelecetion==="PAPER" && computerSelection==="SCISSOR")
+    else if(playerSelecetion==="PAPER" && computerSelection==="SCISSORS")
     {
-        outcome[0]="Computer chooses SCISSOR, you lose!",outcome[1]="loss"
+        outcome[0]="Computer chooses SCISSORS, you lose!",outcome[1]="loss"
        
     }
-    else if(playerSelecetion ==="SCISSOR" && computerSelection==="PAPER")
+    else if(playerSelecetion ==="SCISSORS" && computerSelection==="PAPER")
     {   outcome[0]="Computer chooses PAPER, you win!",outcome[1]="win"
        
     }
-    else if(playerSelecetion==="SCISSOR" && computerSelection==="SCISSOR")
+    else if(playerSelecetion==="SCISSORS" && computerSelection==="SCISSORS")
     {
-        outcome[0]="Computer chooses SCISSOR, it's a draw!",outcome[1]="draw"
+        outcome[0]="Computer chooses SCISSORS, it's a draw!",outcome[1]="draw"
        
     }
-    else if(playerSelecetion==="SCISSOR" && computerSelection==="ROCK")
+    else if(playerSelecetion==="SCISSORS" && computerSelection==="ROCK")
     {
-        outcome[0]="Computer chooses SCISSOR, you lose!",outcome[1]="loss"
+        outcome[0]="Computer chooses SCISSORS, you lose!",outcome[1]="loss"
        
     }
 
