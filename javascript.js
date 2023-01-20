@@ -1,10 +1,17 @@
 //nodes
-const resultDiv=document.querySelector(".result");
+
+const scoreContainer=document.querySelector(".score-Container")
 const playerScore=document.querySelector(".player-Score")
 const computerScore=document.querySelector(".computer-Score")
-const scoreContainer=document.querySelector(".score-Container")
+
+const messageContainer=document.querySelector(".message-Container");
+
 const optionButtons=document.querySelectorAll(".option");
+
+const restartContainer=document.querySelector(".restart-Container")
 const restartBtn=document.querySelector(".restart");
+
+restartContainer.removeChild(restartBtn);
 
 //Computer Score
 let cWon=0;
@@ -106,7 +113,9 @@ if(pWon==5 || cWon==5){
             scoreContainer.textContent=("You lost the game!")
         break;
     }
+    restartContainer.appendChild(restartBtn)
     enableRestartBtn();
+    
 }
 
 round++;
@@ -118,7 +127,7 @@ function addScore(result)
     if(result[1]=="win")pWon++, cLost++;
     else if(result[1]=="draw") pTied++,cTied++;
     else if(result[1]=="loss") pLost++,cWon++;
-    resultDiv.textContent=(result[0])
+    messageContainer.textContent=(result[0])
     return [pWon,cWon]
 }
 function showResult(score)
@@ -141,7 +150,8 @@ function reset(){
     scoreContainer.appendChild(computerScore)
     playerScore.textContent=("Your score: ");
     computerScore.textContent=("Computer score: ");
-    resultDiv.textContent=("")
+    messageContainer.textContent=("")
+    restartContainer.textContent="";
     return;
 }
 
