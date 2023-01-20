@@ -2,6 +2,7 @@
 const resultDiv=document.querySelector(".result");
 const playerScore=document.querySelector(".player-Score")
 const computerScore=document.querySelector(".computer-Score")
+const scoreContainer=document.querySelector(".score-Container")
 const optionButtons=document.querySelectorAll(".option");
 const restartBtn=document.querySelector(".restart");
 
@@ -14,11 +15,13 @@ let cLost=0;
 let pWon=0;
 let pTied=0;
 let pLost=0;
+
+// counts rounds
 let round=0;
 
-//default textContent
-playerScore.textContent=("You won: ");
-computerScore.textContent=("The Computer won:");
+
+playerScore.textContent=("Your score: ");
+computerScore.textContent=("Computer score:");
 
 function getComputerChoice()
 {
@@ -88,18 +91,19 @@ occurance.addEventListener("click",function(e){
 for(round=1;pWon<5 && cWon<5;)
 {
     console.log(round);
-    showResult(addScore(playRound(occurance.textContent,getComputerChoice())));
+    showResult(addScore(playRound(occurance.id,getComputerChoice())));
 break;
 }
 if(pWon==5 || cWon==5){
 
+
     switch(pWon)
     {
         case 5:
-            resultDiv.textContent=("You won!")
+            scoreContainer.textContent=("You won the game!")
         break;
         default:
-            resultDiv.textContent=("You lost!")
+            scoreContainer.textContent=("You lost the game!")
         break;
     }
     enableRestartBtn();
@@ -119,8 +123,8 @@ function addScore(result)
 }
 function showResult(score)
 {
-playerScore.textContent=("You Won: " + score[0] );
-computerScore.textContent=("The Computer Won: " + score[1]);
+playerScore.textContent=("Your score: " + score[0] );
+computerScore.textContent=("Computer score: " + score[1]);
 
 }
 function reset(){
@@ -132,8 +136,11 @@ function reset(){
     pTied=0;
     pLost=0;
 
-    playerScore.textContent=("You Won: ");
-    computerScore.textContent=("The Computer: Won: ");
+    scoreContainer.textContent="";
+    scoreContainer.appendChild(playerScore)
+    scoreContainer.appendChild(computerScore)
+    playerScore.textContent=("Your score: ");
+    computerScore.textContent=("Computer score: ");
     resultDiv.textContent=("")
     return;
 }

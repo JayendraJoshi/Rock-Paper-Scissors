@@ -1,14 +1,19 @@
-body{
-min-height: 100vh;
-background-color: black;
-color:white;
-display: flex;
-flex-direction: column;
-border:3px solid wheat;
-flex-grow: 1;
+*{
+margin:0px;
+padding:0px;
+box-sizing: border-box;
 }
 
-.button-Container,.heading-Container,.score-Container,.result{
+body{
+min-height: 100vh;
+display: flex;
+flex-direction: column;
+flex-grow: 1;
+background-color:rgba(1, 1, 1, 0.923);
+color:white;
+}
+
+.button-Container,.heading-Container,.score-Container,.result,.restart-Container{
     display:flex;
     flex-grow: 1;
 }
@@ -16,6 +21,8 @@ flex-grow: 1;
 .heading-Container{
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    flex-basis: 0px;
 }
 
 .button-Container,.score-Container{
@@ -25,18 +32,32 @@ flex-grow: 1;
 h1{
 font-size: 60px;
 }
-
-button{
-    width: 100px;
-    height:100px
+.button-Container{
+    flex-basis:200px;
+background-color: rgb(3, 66, 15);
 }
+
+
 .result{
+    flex-basis: 0;
     justify-content: center;
+    align-items: center;
     font-size: 30px;
 }
 .score-Container{
     font-size: 40px;
 }
+.restart-Container{
+justify-content: center;
+}
+
 .restart{
-    align-self: center;
+    width: 100px;
+    height:100px
+}
+.option{
+    background-color: rgb(3, 66, 15);
+    border-width: 0;
+    width:150px;
+    height: 150px;
 }
