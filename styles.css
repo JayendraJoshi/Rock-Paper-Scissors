@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Play&family=Roboto:ital,wght@0,400;0,700;1,100&display=swap');
+
+
+
 *{
 margin:0px;
 padding:0px;
@@ -9,8 +13,14 @@ display: flex;
 flex-direction: column;
 flex-grow: 1;
 min-height: 100vh;
-background-color:rgba(1, 1, 1, 0.923);
-color:white;
+background-color:rgba(35,35,35,255);
+color:rgba(194,32,54,255);
+font-family: "Play",sans-serif;
+}
+
+.score-Container img{
+    width: 350px;
+    height: 300px;
 }
 
 h1{
@@ -19,31 +29,41 @@ font-size: 60px;
 
 .button-Container,.heading-Container,.score-Container,.restart-Container{
     display:flex;
-    flex-grow: 1;
 }
 
 .heading-Container{
     align-items: center;
     justify-content: center;
-    flex-basis: 0px;
-    background-color: black;
+    flex-basis: 100px;
+    flex-grow: 1;
+    background-color:rgba(30,30,30,255);
 }
 
 .score-Container{
     font-size: 40px;
-    flex-direction: row;
-    
+    flex-grow: 1;
+    flex-basis: 200px;
+    padding-left: 20px;
+    padding-right: 20px;
     
 }
 .player-Score,.computer-Score,.message-Container{
     display:flex;
     flex-direction: column;
+}
+.player-Score,.computer-Score
+{
+    flex-basis: 100px;
+}
+.message-Container{
     flex-grow: 1;
-    flex-basis: 0px;
+    flex-basis:162.6px;
+    font-size: 50px;
+
 }
 .player-Score-Count,.computer-Score-Count,.player-Score-Heading,.computer-Score-Heading{
     display:flex;
-    flex-grow: 1;
+    flex-basis: 100px;
     align-items: center;
     justify-content: center;
 }
@@ -58,25 +78,28 @@ font-size: 60px;
 .button-Container{
     justify-content: space-around;
     align-items: center;
-    background-color: rgb(3, 66, 15);
-    flex-basis: 0;
+    background-color: rgba(194,32,54,255);
+    flex-grow: 1;
+    flex-basis: 200px;
 }
 .option{
-    background-color: rgb(3, 66, 15);
+    
     border-width: 0;
     width:150px;
     height: 150px;
+background-color: rgba(194,32,54,255);
+
 }
 
 
 .restart-Container{
 align-items: center;
 justify-content: center;
-flex-basis: 0;
+flex-grow: 1;
+flex-basis: 100px;
 }
 
 .restart{
-    width: 50px;
-    height:50px;
+background-color:rgba(35,35,35,255);
 }
 

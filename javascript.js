@@ -10,7 +10,8 @@ const optionButtons=document.querySelectorAll(".option");
 const restartContainer=document.querySelector(".restart-Container")
 const restartBtn=document.querySelector(".restart");
 
-restartContainer.removeChild(restartBtn);
+messageContainer.textContent="FIGHT";
+restartBtn.disabled=true;
 
 //Computer Score
 let cWon=0;
@@ -109,7 +110,6 @@ if(pWon==5 || cWon==5){
             messageContainer.textContent=("You lost the game!")
         break;
     }
-    restartContainer.appendChild(restartBtn)
     enableRestartBtn();
     
 }
@@ -141,8 +141,11 @@ function reset(){
     pTied=0;
     pLost=0;
 
-    restartContainer.removeChild(restartBtn)
+   restartBtn.disabled=true;
     messageContainer.textContent="";
+    playerScoreCount.textContent="";
+    computerScoreCount.textContent="";
+    messageContainer.textContent="FIGHT";
     return;
 }
 
