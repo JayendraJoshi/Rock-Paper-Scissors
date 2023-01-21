@@ -5,61 +5,71 @@ box-sizing: border-box;
 }
 
 body{
-min-height: 100vh;
 display: flex;
 flex-direction: column;
 flex-grow: 1;
+min-height: 100vh;
 background-color:rgba(1, 1, 1, 0.923);
 color:white;
 }
 
-.button-Container,.heading-Container,.score-Container,.result,.restart-Container,.result-Container{
+h1{
+font-size: 60px;
+}
+
+.button-Container,.heading-Container,.score-Container,.restart-Container{
     display:flex;
     flex-grow: 1;
 }
 
 .heading-Container{
-    flex-direction: column;
     align-items: center;
     justify-content: center;
     flex-basis: 0px;
     background-color: black;
 }
 
-.button-Container,.score-Container{
-    justify-content: space-around;
-    align-items: center;
-}
-h1{
-font-size: 60px;
-}
-.button-Container{
-    flex-basis:200px;
-background-color: rgb(3, 66, 15);
-flex-basis: 0;
-}
-
-.result{
-    flex-basis: 0;
-    justify-content: center;
-    align-items: center;
-    font-size: 30px;
-}
 .score-Container{
     font-size: 40px;
-    flex-basis: 0;
-    flex-direction: column;
-    align-items:flex-start
+    flex-direction: row;
+    
     
 }
-.result-Container{
-    font-size:30px;
+.player-Score,.computer-Score,.message-Container{
+    display:flex;
+    flex-direction: column;
+    flex-grow: 1;
     flex-basis: 0px;
-    color:white;
+}
+.player-Score-Count,.computer-Score-Count,.player-Score-Heading,.computer-Score-Heading{
+    display:flex;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.message-Container{
+    align-items: center;
+    justify-content: center;
 
 }
-.restart-Container{
 
+.button-Container{
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(3, 66, 15);
+    flex-basis: 0;
+}
+.option{
+    background-color: rgb(3, 66, 15);
+    border-width: 0;
+    width:150px;
+    height: 150px;
+}
+
+
+.restart-Container{
 align-items: center;
 justify-content: center;
 flex-basis: 0;
@@ -69,9 +79,4 @@ flex-basis: 0;
     width: 50px;
     height:50px;
 }
-.option{
-    background-color: rgb(3, 66, 15);
-    border-width: 0;
-    width:150px;
-    height: 150px;
-}
+

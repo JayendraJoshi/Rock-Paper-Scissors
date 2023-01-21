@@ -2,12 +2,11 @@
 
 const scoreContainer=document.querySelector(".score-Container")
 const playerScore=document.querySelector(".player-Score")
+const playerScoreCount=document.querySelector(".player-Score-Count")
 const computerScore=document.querySelector(".computer-Score")
-
+const computerScoreCount=document.querySelector(".computer-Score-Count")
 const messageContainer=document.querySelector(".message-Container");
-
 const optionButtons=document.querySelectorAll(".option");
-
 const restartContainer=document.querySelector(".restart-Container")
 const restartBtn=document.querySelector(".restart");
 
@@ -26,9 +25,6 @@ let pLost=0;
 // counts rounds
 let round=0;
 
-
-playerScore.textContent=("Your score: ");
-computerScore.textContent=("Computer score:");
 
 function getComputerChoice()
 {
@@ -107,10 +103,10 @@ if(pWon==5 || cWon==5){
     switch(pWon)
     {
         case 5:
-            scoreContainer.textContent=("You won the game!")
+            messageContainer.textContent=("You won the game!")
         break;
         default:
-            scoreContainer.textContent=("You lost the game!")
+            messageContainer.textContent=("You lost the game!")
         break;
     }
     restartContainer.appendChild(restartBtn)
@@ -132,8 +128,8 @@ function addScore(result)
 }
 function showResult(score)
 {
-playerScore.textContent=("Your score: " + score[0] );
-computerScore.textContent=("Computer score: " + score[1]);
+playerScoreCount.textContent=(score[0] );
+computerScoreCount.textContent=(score[1]);
 
 }
 function reset(){
@@ -145,13 +141,8 @@ function reset(){
     pTied=0;
     pLost=0;
 
-    scoreContainer.textContent="";
-    scoreContainer.appendChild(playerScore)
-    scoreContainer.appendChild(computerScore)
-    playerScore.textContent=("Your score: ");
-    computerScore.textContent=("Computer score: ");
-    messageContainer.textContent=("")
-    restartContainer.textContent="";
+    restartContainer.removeChild(restartBtn)
+    messageContainer.textContent="";
     return;
 }
 
