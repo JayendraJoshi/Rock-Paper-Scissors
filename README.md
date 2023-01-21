@@ -14,4 +14,4 @@ https://www.deviantart.com/epicblargman/art/Hunter-Association-Logo-Scalable-Vec
 
 https://comicvine.gamespot.com/forums/gen-discussion-1/hxh-being-planet-lvl-2227013/
 
-https://www.cleanpng.com/png-computer-icons-person-anonymous-819960/download-png.html
+https://www.cleanpng.com/png-computer-icons-person-anonymous-819960/
