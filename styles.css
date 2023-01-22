@@ -13,9 +13,13 @@ display: flex;
 flex-direction: column;
 flex-grow: 1;
 min-height: 100vh;
-background-color:rgba(35,35,35,255);
+background-color: hsla(0deg, 0%, 14%, 1);
 color:rgba(194,32,54,255);
 font-family: "Play",sans-serif;
+text-shadow: 0 0 10px hsla(352deg, 72%, 44%,1) ;
+border-image: radial-gradient(hsl(14, 96%, 55%), hsl(53, 99%, 55%)1);
+border-style: solid;
+border-width: 5px;
 }
 
 .score-Container img{
@@ -36,7 +40,7 @@ font-size: 60px;
     justify-content: center;
     flex-basis: 100px;
     flex-grow: 1;
-    background-color:rgba(30,30,30,255);
+    background-color:rgba(0, 0, 0, 0.547);
 }
 
 .score-Container{
@@ -53,7 +57,19 @@ font-size: 60px;
 }
 .player-Score,.computer-Score
 {
-    flex-basis: 100px;
+    flex-basis: 200px;
+    align-items: center;
+    text-align: center;
+    border-image: radial-gradient(hsl(14, 96%, 55%), hsl(53, 99%, 55%)1);
+    border-width: 5px;
+    border-style: solid;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.player-Score-Count,.computer-Score-Count{
+    font-size: 50px;
+
 }
 .message-Container{
     flex-grow: 1;
@@ -72,22 +88,40 @@ font-size: 60px;
 .message-Container{
     align-items: center;
     justify-content: center;
+    font-size: 50px;
 
 }
+
+.gradient-Container-0{
+background: linear-gradient(to right,hsl(14, 96%, 55%), hsl(53, 99%, 55%));  
+    height:4px;
+    width:auto;
+
+}
+
+.gradient-Container{
+    background: linear-gradient(to right,hsl(53, 99%, 55%), hsl(14, 96%, 55%));   
+    height:4px;
+    width:auto;
+}
+.gradient-Container-2{
+    background: linear-gradient(to right,hsl(14, 96%, 55%), hsl(53, 99%, 55%)); 
+    height:4px;
+    width:auto;
+ }
 
 .button-Container{
     justify-content: space-around;
     align-items: center;
-    background-color: rgba(194,32,54,255);
+    background-color: 	hsla(352, 72%, 44%,1);
     flex-grow: 1;
     flex-basis: 200px;
 }
 .option{
-    
     border-width: 0;
     width:150px;
     height: 150px;
-background-color: rgba(194,32,54,255);
+background-color:	hsla(352, 72%, 44%, 1);
 
 }
 
@@ -100,6 +134,6 @@ flex-basis: 100px;
 }
 
 .restart{
-background-color:rgba(35,35,35,255);
+background-color:	hsla(0, 0%, 14%, 1);
 }
 

@@ -13,7 +13,7 @@ const restartBtn=document.querySelector(".restart");
 messageContainer.textContent="FIGHT";
 restartBtn.disabled=true;
 
-//Computer Score
+//Gon Score
 let cWon=0;
 let cTied=0;
 let cLost=0;
@@ -27,62 +27,62 @@ let pLost=0;
 let round=0;
 
 
-function getComputerChoice()
+function getGonChoice()
 {
     const compInput = new Array("ROCK","PAPER","SCISSORS");
     const random = Math.floor(Math.random() * compInput.length);
     return compInput[random];
 }
 
-function playRound(playerSelecetion1,computerSelection)
+function playRound(playerSelecetion1,GonSelection)
 {
     const outcome=["default","default"];
 
         playerSelecetion = playerSelecetion1.toUpperCase();
 
 
-    if(playerSelecetion ==="ROCK" && computerSelection==="SCISSORS")
+    if(playerSelecetion ==="ROCK" && GonSelection==="SCISSORS")
     {
-        outcome[0]="Computer chooses SCISSORS, you win!", outcome[1]="win"
+        outcome[0]="Gon chooses SCISSORS, you win!", outcome[1]="win"
        
     }
-    else if(playerSelecetion==="ROCK" && computerSelection==="ROCK")
+    else if(playerSelecetion==="ROCK" && GonSelection==="ROCK")
     {
-         outcome[0]="Computer chooses ROCK, it's a draw!", outcome[1]="draw"
+         outcome[0]="Gon chooses ROCK, it's a draw!", outcome[1]="draw"
        
     }
-    else if(playerSelecetion==="ROCK" && computerSelection==="PAPER")
+    else if(playerSelecetion==="ROCK" && GonSelection==="PAPER")
     {
-        outcome[0]="Computer chooses PAPER, you lose!", outcome[1]="loss"
+        outcome[0]="Gon chooses PAPER, you lose!", outcome[1]="loss"
        
     }
-    else if(playerSelecetion ==="PAPER" && computerSelection==="ROCK")
+    else if(playerSelecetion ==="PAPER" && GonSelection==="ROCK")
     {
-         outcome[0]="Computer chooses ROCK, you win!", outcome[1]="win"
+         outcome[0]="Gon chooses ROCK, you win!", outcome[1]="win"
        
     }
-    else if(playerSelecetion==="PAPER" && computerSelection==="PAPER")
+    else if(playerSelecetion==="PAPER" && GonSelection==="PAPER")
     {
-         outcome[0]="Computer chooses PAPER, it's a draw!",outcome[1]="draw"
+         outcome[0]="Gon chooses PAPER, it's a draw!",outcome[1]="draw"
        
     }
-    else if(playerSelecetion==="PAPER" && computerSelection==="SCISSORS")
+    else if(playerSelecetion==="PAPER" && GonSelection==="SCISSORS")
     {
-        outcome[0]="Computer chooses SCISSORS, you lose!",outcome[1]="loss"
+        outcome[0]="Gon chooses SCISSORS, you lose!",outcome[1]="loss"
        
     }
-    else if(playerSelecetion ==="SCISSORS" && computerSelection==="PAPER")
-    {   outcome[0]="Computer chooses PAPER, you win!",outcome[1]="win"
+    else if(playerSelecetion ==="SCISSORS" && GonSelection==="PAPER")
+    {   outcome[0]="Gon chooses PAPER, you win!",outcome[1]="win"
        
     }
-    else if(playerSelecetion==="SCISSORS" && computerSelection==="SCISSORS")
+    else if(playerSelecetion==="SCISSORS" && GonSelection==="SCISSORS")
     {
-        outcome[0]="Computer chooses SCISSORS, it's a draw!",outcome[1]="draw"
+        outcome[0]="Gon chooses SCISSORS, it's a draw!",outcome[1]="draw"
        
     }
-    else if(playerSelecetion==="SCISSORS" && computerSelection==="ROCK")
+    else if(playerSelecetion==="SCISSORS" && GonSelection==="ROCK")
     {
-        outcome[0]="Computer chooses SCISSORS, you lose!",outcome[1]="loss"
+        outcome[0]="Gon chooses SCISSORS, you lose!",outcome[1]="loss"
        
     }
 
@@ -95,7 +95,7 @@ occurance.addEventListener("click",function(e){
 for(round=1;pWon<5 && cWon<5;)
 {
     console.log(round);
-    showResult(addScore(playRound(occurance.id,getComputerChoice())));
+    showResult(addScore(playRound(occurance.id,getGonChoice())));
 break;
 }
 if(pWon==5 || cWon==5){
