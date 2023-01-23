@@ -9,9 +9,12 @@ const messageContainer=document.querySelector(".message-Container");
 const optionButtons=document.querySelectorAll(".option");
 const restartContainer=document.querySelector(".restart-Container")
 const restartBtn=document.querySelector(".restart");
+const buttons=document.querySelectorAll("button");
 
 messageContainer.textContent="FIGHT";
 restartBtn.disabled=true;
+restartBtn.classList.remove("hover");
+restartBtn.classList.remove("highlight");
 
 //Gon Score
 let cWon=0;
@@ -141,7 +144,9 @@ function reset(){
     pTied=0;
     pLost=0;
 
-   restartBtn.disabled=true;
+    restartBtn.disabled=true;
+    restartBtn.classList.remove("hover");
+    restartBtn.classList.remove("highlight");
     messageContainer.textContent="";
     playerScoreCount.textContent="";
     computerScoreCount.textContent="";
@@ -151,6 +156,8 @@ function reset(){
 
 function enableRestartBtn(){
    restartBtn.disabled=false;
+    restartBtn.classList.add("highlight");
+restartBtn.classList.add("hover");
 }
 
 restartBtn.addEventListener('click',function(){
@@ -158,3 +165,4 @@ restartBtn.addEventListener('click',function(){
     reset();
 
 })
+
