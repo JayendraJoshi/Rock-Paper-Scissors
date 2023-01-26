@@ -2,6 +2,8 @@
 
 This will be a simple Rock-Paper-Scissor game built from scratch with javascript.
 
+I do not own any of the images presented in this project.
+
 Image sources:
 
 https://openclipart.org/detail/208784/alpine-landscape-rock-rubble-01g-al1

@@ -1,172 +1,134 @@
 @import url('https://fonts.googleapis.com/css2?family=Play&family=Roboto:ital,wght@0,400;0,700;1,100&display=swap');
-
-
-
 *{
 margin:0px;
 padding:0px;
 box-sizing: border-box;
 }
-
 body{
+min-height: 100vh;
 display: flex;
 flex-direction: column;
 flex-grow: 1;
-min-height: 100vh;
-background-color: hsla(0deg, 0%, 14%, 1);
-color:rgba(194,32,54,255);
 font-family: "Play",sans-serif;
-text-shadow: 0 0 10px hsla(352deg, 72%, 44%,1) ;
+text-shadow: 0 0 10px hsla(352deg, 72%, 44%,1);
+color:rgba(194,32,54,255);
+background-color: hsla(0deg, 0%, 14%, 1);
 border-image: radial-gradient(hsl(14, 96%, 55%), hsl(53, 99%, 55%)1);
 border-style: solid;
 border-width: 5px;
-
 }
-
-
-
-.score-Container img{
-    width: 350px;
-    height: 300px;
-}
-
-h1{
-font-size: 60px;
-}
-
-.button-Container,.heading-Container,.score-Container,.restart-Container{
-    display:flex;
-}
-
+/* heading */
 .heading-Container{
-    align-items: center;
-    justify-content: center;
     flex-basis: 100px;
     flex-grow: 1;
     background-color:rgba(0, 0, 0, 0.547);
+    font-size: 60px;
 }
-
+h1{
+font-size: 60px;
+}
+.gradient-Container-1{
+    background: linear-gradient(to right,hsl(14, 96%, 55%), hsl(53, 99%, 55%));  
+    height:4px;
+    width:auto;
+}
+/* score-Container */
 .score-Container{
-    font-size: 40px;
     flex-grow: 1;
     flex-basis: 200px;
     padding-left: 20px;
     padding-right: 20px;
-    
+}
+.score-Container img{
+    width: 350px;
+    height: 300px;
+}
+.button-Container,.heading-Container,.score-Container,.restart-button-Container,.button-Container{
+    display:flex;
+    align-items: center;
+    justify-content: center;
 }
 .player-Score,.computer-Score,.message-Container{
     display:flex;
     flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-size: 50px;
 }
 .player-Score,.computer-Score
 {
     flex-basis: 200px;
-    align-items: center;
-    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
     border-image: radial-gradient(hsl(14, 96%, 55%), hsl(53, 99%, 55%)1);
     border-width: 5px;
     border-style: solid;
-    margin-top: 5px;
-    margin-bottom: 5px;
-}
-
-.player-Score-Count,.computer-Score-Count{
-    font-size: 50px;
-
 }
 .message-Container{
     flex-grow: 1;
     flex-basis:162.6px;
-    font-size: 50px;
-
 }
 .player-Score-Count,.computer-Score-Count,.player-Score-Heading,.computer-Score-Heading{
     display:flex;
+    align-items: center;
+    justify-content: center;
     flex-basis: 100px;
-    align-items: center;
-    justify-content: center;
 }
-
-
-.message-Container{
-    align-items: center;
-    justify-content: center;
-    font-size: 50px;
-
-}
-
-.gradient-Container-0{
-background: linear-gradient(to right,hsl(14, 96%, 55%), hsl(53, 99%, 55%));  
-    height:4px;
-    width:auto;
-
-}
-
-.gradient-Container{
+.gradient-Container-2{
     background: linear-gradient(to right,hsl(53, 99%, 55%), hsl(14, 96%, 55%));   
     height:4px;
     width:auto;
 }
-.gradient-Container-2{
-    background: linear-gradient(to right,hsl(14, 96%, 55%), hsl(53, 99%, 55%)); 
-    height:4px;
-    width:auto;
-}
-
+/*button-Container*/
 .button-Container{
-    justify-content: space-around;
-    align-items: center;
     background-color: 	hsla(352, 72%, 44%,1);
+    gap:200px;
     flex-grow: 1;
     flex-basis: 200px;
 }
 .option{
     width:150px;
     height: 150px;
-background-color:	hsla(352, 72%, 44%,1);
-padding:15px;
+    background-color:	hsla(352, 72%, 44%,1);
+    padding:15px;
 }
-
+button.option{
+    border:5px;
+    border-color: orange;
+    border-style: solid;
+    border-radius: 10px;
+    margin:10px;
+}
 #Scissors img{
     height: 110px;
     width: auto;
-
 }
-.restart-Container{
-align-items: center;
-justify-content: center;
-flex-grow: 1;
-flex-basis: 100px;
+.gradient-Container-3{
+    background: linear-gradient(to right,hsl(14, 96%, 55%), hsl(53, 99%, 55%)); 
+    height:4px;
+    width:auto;
 }
-
-.restart{
-background-color:	hsla(0, 0%, 14%, 1);
-border-style: none;
-height: 160px;
-width: auto;
+/*restart-Container*/
+.restart-button-Container{
+    flex-grow: 1;
+    flex-basis: 100px;
 }
-
-.restart img{
+.restart-button{
+    height: 160px;
+    width: auto;
+    background-color:hsla(0, 0%, 14%, 1);
+    border-style: none;
+}
+.restart-button img{
     margin:auto;
-
 }
-.hover :hover{
-transform: scale(1.1);
-border-color: aqua;
-}
-
-
-button.option{
-border:5px;
-border-color: orange;
-border-style: solid;
-border-radius: 10px;
-margin:10px;
-}
-
 .highlight{
-border:5px;
-border-radius: 10px;
-border-color: orange;
-border-style: solid;
+    border:5px;
+    border-radius: 10px;
+    border-color: orange;
+    border-style: solid;
+}
+/* hover selector*/
+.hover :hover{
+    transform: scale(1.1);
 }
